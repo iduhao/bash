@@ -15,16 +15,16 @@ done
 #这一部分以循环的方式删除用户并将过程显示在屏幕上。
 echo "do you want to del this users:"
 read -p "please input y or n." del
-if [ $del="y" ]
-then
+case $del in
+y)
 	let count=count-1
 	for((count;count>=1;count--))
 	do
 	sudo userdel -r $user$count
 	echo "user $user$count del successfully"
-done
-
-elif [ $del="n" ]
-then
-	echo "users be reserve."
-fi
+	done
+	;;	
+n)
+ 	 echo "user reserved"
+	;;
+esac
