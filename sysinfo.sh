@@ -1,5 +1,6 @@
 #/bin/bash
 ##显示当前主机的信息，包括主机名，ip地址，系统版本，内核版本，cpu，内存和硬盘信息
+clear
 echo "本机名称:`hostname`"
 echo "ip地址:`ifconfig | tr -s " " ":" | cut -d : -f3 | head -n 2 | tail -n 1`"
 echo "内核版本:`uname`->`uname -r`"
